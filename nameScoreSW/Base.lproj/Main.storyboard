@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="so6-8q-7Zr">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--姓名診断-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="nameScoreSW" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" horizontalHuggingPriority="251" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuW-mP-swm">
+                                <rect key="frame" x="540" y="94" width="34" height="30"/>
+                                <state key="normal" title="send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cWD-km-5Ni" kind="show" identifier="showResult" id="nBC-tz-Kbb"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3F-Cg-HbY">
+                                <rect key="frame" x="26" y="94" width="504" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d3F-Cg-HbY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="BUG-eC-WP6"/>
+                            <constraint firstItem="KuW-mP-swm" firstAttribute="leading" secondItem="d3F-Cg-HbY" secondAttribute="trailing" constant="10" id="Wf1-iH-vom"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KuW-mP-swm" secondAttribute="trailing" constant="10" id="WmB-Vw-DhZ"/>
+                            <constraint firstItem="KuW-mP-swm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="YoU-BD-dp1"/>
+                            <constraint firstItem="d3F-Cg-HbY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="hM7-Ip-gUx"/>
+                            <constraint firstItem="d3F-Cg-HbY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="pFR-n5-hFE"/>
+                            <constraint firstItem="d3F-Cg-HbY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="zQe-BR-p97"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BUG-eC-WP6"/>
+                                <exclude reference="hM7-Ip-gUx"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="姓名診断" id="iRQ-iN-wNV"/>
+                    <connections>
+                        <outlet property="sendButton" destination="KuW-mP-swm" id="rbT-16-Jsr"/>
+                        <outlet property="textField" destination="d3F-Cg-HbY" id="AF6-kj-i4t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="429"/>
+        </scene>
+        <!--診断結果-->
+        <scene sceneID="A7i-Ym-s4Q">
+            <objects>
+                <viewController id="cWD-km-5Ni" customClass="ResultViewController" customModule="nameScoreSW" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cnL-kS-vzl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vny-Yf-98Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h7w-rx-Gzy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたの点数は" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNs-tA-iM4">
+                                <rect key="frame" x="241" y="191.5" width="119" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100点" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11U-4j-FQU">
+                                <rect key="frame" x="216" y="262" width="168.5" height="76.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="11U-4j-FQU" firstAttribute="top" secondItem="yNs-tA-iM4" secondAttribute="bottom" constant="50" id="4j8-vP-dhK"/>
+                            <constraint firstAttribute="centerX" secondItem="yNs-tA-iM4" secondAttribute="centerX" id="7GH-D5-Usi"/>
+                            <constraint firstAttribute="centerY" secondItem="11U-4j-FQU" secondAttribute="centerY" id="ImI-1E-kuK"/>
+                            <constraint firstAttribute="centerX" secondItem="11U-4j-FQU" secondAttribute="centerX" id="LGS-5v-ZZY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="診断結果" id="SwO-8U-q3m"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="yNs-tA-iM4" id="LH8-Aj-xls"/>
+                        <outlet property="scoreLabel" destination="11U-4j-FQU" id="tSt-vv-A3b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q38-hr-iZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1938" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8u9-aD-1xl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="so6-8q-7Zr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pTv-Ks-e6x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JAH-uF-M1h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luJ-wg-MrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="530" y="429"/>
+        </scene>
+    </scenes>
+</document>
